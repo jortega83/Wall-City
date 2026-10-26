@@ -464,6 +464,39 @@
     .proof-row{justify-content:flex-start;}
     .testi-grid{grid-template-columns:1fr;}
   }
+
+  /* ===== MONEY SECTIONS ===== */
+  section.freecheck{padding:34px 0; background:linear-gradient(90deg,var(--panel-2),var(--panel)); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  section.freecheck .wrap{display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap;}
+  section.freecheck h3{font-family:'Fraunces',serif; font-size:24px; color:var(--paper); line-height:1.25; margin-bottom:6px;}
+  section.freecheck p{color:var(--ink-dim); font-size:15.5px; max-width:60ch; line-height:1.55;}
+  section.hosts{padding:88px 0; background:var(--panel); border-top:1px solid var(--line);}
+  section.hosts .head{max-width:70ch; margin-bottom:44px;}
+  section.hosts h2{font-size:32px; color:var(--paper); line-height:1.2; margin-bottom:14px; max-width:22ch;}
+  section.hosts .head p{font-size:17px; color:var(--ink-dim); line-height:1.6;}
+  .host-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .host-card{background:var(--void); border:1px solid var(--line); padding:30px 26px; display:flex; flex-direction:column; transition:transform .25s, border-color .25s;}
+  .host-card:hover{transform:translateY(-4px); border-color:var(--gold);}
+  .host-card.feat{border-color:var(--gold); box-shadow:0 0 40px rgba(232,196,143,.12);}
+  .host-card .hc-tag{font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.08em; color:var(--gold); margin-bottom:14px;}
+  .host-card h4{font-family:'Fraunces',serif; font-size:21px; color:var(--paper); margin-bottom:10px; line-height:1.25;}
+  .host-card p{font-size:14.5px; color:var(--ink-dim); line-height:1.6; margin-bottom:16px;}
+  .host-card ul{list-style:none; font-size:14px; color:var(--ink-dim); margin-bottom:22px;}
+  .host-card li{padding:4px 0 4px 16px; position:relative;}
+  .host-card li::before{content:"✓"; position:absolute; left:0; color:var(--gold);}
+  .host-card .hc-price{margin-top:auto; border-top:1px solid var(--line); padding-top:16px;}
+  .host-card .hc-price strong{display:block; font-size:22px; color:var(--gold); font-family:'Space Grotesk',sans-serif;}
+  .host-card .hc-price span{font-size:12.5px; color:var(--ink-dim);}
+  .host-card .hc-link{display:inline-block; margin-top:14px; color:var(--paper); font-size:14px; font-weight:600; text-decoration:none; border-bottom:1px solid var(--gold);}
+  .case-grid.six{grid-template-columns:repeat(3,1fr);}
+  .quote-form{margin-top:30px; display:grid; gap:12px; max-width:440px;}
+  .quote-form label{font-size:12.5px; color:var(--ink-dim); display:block; margin-bottom:5px;}
+  .quote-form select, .quote-form input{width:100%; background:var(--panel); color:var(--paper); border:1px solid var(--line); padding:12px 14px; font:inherit; font-size:15px; border-radius:0;}
+  .quote-form select:focus, .quote-form input:focus{outline:2px solid var(--gold); outline-offset:1px;}
+  .quote-form .two{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .quote-form button{cursor:pointer; border:none; font-family:inherit;}
+  .quote-form .fine{font-size:12.5px; color:var(--ink-dim);}
+  @media (max-width:900px){ .host-grid, .case-grid.six{grid-template-columns:1fr;} section.freecheck h3{font-size:21px;} .quote-form .two{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
@@ -486,6 +519,7 @@
       <ul>
         <li><a href="#ti">TheWallCity TI</a></li>
         <li><a href="#arq">TheWallCity Arquitectura</a></li>
+        <li><a href="#anfitriones">Anfitriones</a></li>
         <li><a href="#membresias">Precios</a></li>
         <li><a href="#proceso">Cómo trabajamos</a></li>
         <li><a href="#contacto">Preguntas</a></li>
@@ -536,6 +570,16 @@
       <div class="proof-stat"><strong>100%</strong><span>soporte bilingüe (ES/EN)</span></div>
       <div class="proof-stat"><strong>1</strong><span>diagnóstico inicial, sin costo</span></div>
     </div>
+  </div>
+</section>
+
+<section class="freecheck reveal">
+  <div class="wrap">
+    <div>
+      <h3>Revisión gratuita de Wi-Fi y seguridad para tu propiedad</h3>
+      <p>20 minutos por videollamada o visita. Revisamos tu red, cámaras y cerraduras, y te decimos qué corregir primero. Sin costo y sin compromiso.</p>
+    </div>
+    <a class="btn-primary" href="https://wa.me/12017592350?text=Hola%2C%20quiero%20la%20revisi%C3%B3n%20gratuita%20de%20Wi-Fi%20y%20seguridad." target="_blank" rel="noopener">Pedir revisión gratis →</a>
   </div>
 </section>
 
@@ -657,13 +701,48 @@
 
 </div>
 
+<section class="hosts reveal" id="anfitriones">
+  <div class="wrap">
+    <div class="head">
+      <h2>Para dueños y anfitriones de alquiler vacacional</h2>
+      <p>Instalamos una vez y lo mantenemos funcionando cada mes, para que tu propiedad opere sin que tengas que estar ahí. Ideal si vives fuera de Colombia.</p>
+    </div>
+    <div class="host-grid">
+      <div class="host-card">
+        <div class="hc-tag">CHECK-IN SIN LLAVES</div>
+        <h4>Cerraduras inteligentes</h4>
+        <p>Códigos únicos por huésped, sin entregar llaves ni coordinar horarios.</p>
+        <ul><li>Instalación y configuración</li><li>Códigos automáticos por reserva</li><li>Soporte y cambio de baterías</li></ul>
+        <div class="hc-price"><strong>Desde $380.000</strong><span>COP por cerradura, instalación · mantenimiento desde $30.000/mes</span></div>
+        <a class="hc-link" href="https://wa.me/12017592350?text=Hola%2C%20me%20interesan%20las%20cerraduras%20inteligentes." target="_blank" rel="noopener">Cotizar →</a>
+      </div>
+      <div class="host-card">
+        <div class="hc-tag">VIGILANCIA</div>
+        <h4>Cámaras con monitoreo en la nube</h4>
+        <p>Mira la entrada y las áreas comunes desde tu teléfono, con alertas y grabación guardada.</p>
+        <ul><li>Cámaras en exteriores y accesos</li><li>Grabación en la nube</li><li>Alertas de movimiento</li></ul>
+        <div class="hc-price"><strong>Desde $480.000</strong><span>COP por cámara, instalación · monitoreo desde $25.000/mes por cámara</span></div>
+        <a class="hc-link" href="https://wa.me/12017592350?text=Hola%2C%20me%20interesan%20las%20c%C3%A1maras%20con%20monitoreo." target="_blank" rel="noopener">Cotizar →</a>
+      </div>
+      <div class="host-card feat">
+        <div class="hc-tag">MÁS POPULAR · PLAN MENSUAL</div>
+        <h4>Cuidado de propiedad</h4>
+        <p>Una tarifa fija al mes. Revisamos tu tecnología y te enviamos un reporte.</p>
+        <ul><li>Revisión mensual de Wi-Fi, cámaras y cerraduras</li><li>Reporte con fotos al propietario</li><li>Atención prioritaria por WhatsApp</li></ul>
+        <div class="hc-price"><strong>Desde $350.000</strong><span>COP por propiedad / mes</span></div>
+        <a class="hc-link" href="https://wa.me/12017592350?text=Hola%2C%20me%20interesa%20el%20plan%20mensual%20de%20cuidado%20de%20propiedad." target="_blank" rel="noopener">Cotizar →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="crossover reveal">
   <div class="wrap">
     <div class="head">
       <h2>Donde se cruzan las dos disciplinas</h2>
       <p>Algunos proyectos necesitan las dos especialidades a la vez. Aquí es donde TheWallCity rinde más que contratar dos proveedores por separado.</p>
     </div>
-    <div class="case-grid">
+    <div class="case-grid six">
       <div class="case">
         <div class="mark"><span class="m-ti"></span><span class="m-arq"></span></div>
         <h4>Alquiler vacacional inteligente</h4>
@@ -678,6 +757,21 @@
         <div class="mark"><span class="m-ti"></span><span class="m-arq"></span></div>
         <h4>Ampliación de hotel boutique</h4>
         <p>Diseño de habitaciones adicionales junto con segmentación de red por zonas y sistema de cámaras integrado a la obra.</p>
+      </div>
+      <div class="case">
+        <div class="mark"><span class="m-ti"></span><span class="m-arq"></span></div>
+        <h4>Listo para Airbnb en 30 días</h4>
+        <p>Un solo precio cerrado: diseño de interiores y remodelación por el arquitecto, más Wi-Fi, cámaras y cerraduras. Entregamos la propiedad lista para recibir huéspedes.</p>
+      </div>
+      <div class="case">
+        <div class="mark"><span class="m-ti"></span><span class="m-arq"></span></div>
+        <h4>Revisión antes de comprar</h4>
+        <p>¿Vas a comprar en Cartagena desde el exterior? El arquitecto revisa la estructura y nosotros la red y la seguridad, con un informe a precio fijo antes de que pagues.</p>
+      </div>
+      <div class="case">
+        <div class="mark"><span class="m-ti"></span><span class="m-arq"></span></div>
+        <h4>Remodelación con cableado incluido</h4>
+        <p>Si ya vas a abrir paredes, es el momento más barato para pasar cables de red y cámaras. Lo coordinamos con la obra para no romper dos veces.</p>
       </div>
     </div>
   </div>
@@ -842,6 +936,14 @@
     <div>
       <h2>Hablemos de tu proyecto</h2>
       <p class="body">Cuéntanos si necesitas resolver algo de tecnología, algo de construcción, o ambas cosas. Respondemos en menos de 24 horas hábiles.</p>
+<form class="quote-form" id="quoteForm">
+        <div><label for="qs">¿Qué necesitas?</label>
+          <select id="qs"><option>Revisión gratuita de Wi-Fi y seguridad</option><option>Cerraduras inteligentes</option><option>Cámaras con monitoreo</option><option>Plan mensual de cuidado de propiedad</option><option>Remodelación + tecnología</option><option>Revisión antes de comprar una propiedad</option><option>Soporte de TI para mi negocio</option></select></div>
+        <div class="two"><div><label for="qn">Tu nombre</label><input id="qn" autocomplete="name" required></div>
+        <div><label for="qc">Ciudad o barrio</label><input id="qc" placeholder="Cartagena"></div></div>
+        <button class="btn-primary" type="submit">Cotizar por WhatsApp →</button>
+        <div class="fine">Te abre WhatsApp con el mensaje listo. Respondemos en menos de 24 horas hábiles.</div>
+      </form>
     </div>
     <div class="contact-card">
       <div class="row"><div class="label">Correo</div><div class="value fill"><a href="mailto:roberto.carlos@thewallcity.com">roberto.carlos@thewallcity.com</a></div></div>
@@ -1018,6 +1120,12 @@
         ans.style.maxHeight = ans.scrollHeight + 'px';
       }
     });
+  });
+
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var m = 'Hola, soy ' + document.getElementById('qn').value + ' (' + (document.getElementById('qc').value || 'Cartagena') + '). Me interesa: ' + document.getElementById('qs').value + '.';
+    window.open('https://wa.me/12017592350?text=' + encodeURIComponent(m), '_blank', 'noopener');
   });
 </script>
 </body>
