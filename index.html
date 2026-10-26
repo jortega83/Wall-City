@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TheWallCity — TI y Arquitectura</title>
+<meta name="description" content="Infraestructura de TI, ciberseguridad y arquitectura con matrícula profesional, en un mismo equipo. Cartagena, Colombia.">
+<meta name="theme-color" content="#0B0F24">
+<meta property="og:title" content="TheWallCity — TI y Arquitectura">
+<meta property="og:description" content="Infraestructura de TI, ciberseguridad y arquitectura con matrícula profesional, en un mismo equipo. Cartagena, Colombia.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://jortega83.github.io/Wall-City/og-image.jpg">
+<meta property="og:url" content="https://jortega83.github.io/Wall-City/">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TheWallCity — TI y Arquitectura">
+<meta name="twitter:description" content="Infraestructura de TI, ciberseguridad y arquitectura con matrícula profesional, en un mismo equipo. Cartagena, Colombia.">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#0B0F24;
+    --panel:#121838;
+    --panel-2:#1A2250;
+    --paper:#FFF7EA;
+    --ink:#EEF0FA;
+    --ink-dim:rgba(238,240,250,0.70);
+    --gold:#FFC857;
+    --gold-deep:#E5A82E;
+    --coral:#FF6F59;
+    --coral-deep:#E0523D;
+    --violet:#7C5CFF;
+    --line: rgba(238,240,250,0.13);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--void);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  .mono{font-family:'IBM Plex Mono', monospace; letter-spacing:0.02em;}
+  .grotesk{font-family:'Space Grotesk', sans-serif;}
+  a{color:inherit;}
+  img{max-width:100%;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 32px;}
+
+  /* background grid texture used across dark sections */
+  .grid-bg{
+    background-image:
+      linear-gradient(rgba(255,200,87,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,200,87,0.05) 1px, transparent 1px);
+    background-size:44px 44px;
+  }
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,15,36,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:76px;
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:21px; letter-spacing:-0.01em;}
+  .brand-mark{width:40px; height:auto; flex:0 0 auto;}
+  nav ul{list-style:none; display:flex; gap:32px;}
+  nav a{text-decoration:none; font-size:14.5px; font-weight:500; color:var(--ink-dim);}
+  nav a:hover{color:var(--gold);}
+  nav .cta{
+    background:var(--gold); color:var(--void); padding:10px 18px; border-radius:2px; font-weight:600;
+  }
+  nav .cta:hover{background:var(--paper);}
+  .navlinks{display:flex; align-items:center; gap:36px;}
+
+  /* HERO */
+  header.hero{
+    background:radial-gradient(ellipse 900px 520px at 78% -10%, rgba(124,92,255,0.30), transparent),
+               radial-gradient(ellipse 720px 420px at 4% 72%, rgba(255,111,89,0.16), transparent),
+               var(--void);
+    padding:96px 0 0;
+    overflow:hidden;
+    position:relative;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap:48px;
+    align-items:end;
+  }
+  .hero-eyebrow{
+    color:var(--gold);
+    font-size:13.5px;
+    font-weight:500;
+    margin-bottom:22px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .hero-eyebrow .dot{width:7px; height:7px; border-radius:50%; background:var(--gold); box-shadow:0 0 10px var(--gold);}
+  .hero h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    letter-spacing:-0.02em;
+    font-size:clamp(38px, 5.2vw, 66px);
+    line-height:1.05;
+    max-width:12ch;
+  }
+  .hero p.lede{
+    margin-top:24px;
+    font-size:19px;
+    max-width:46ch;
+    color:var(--ink-dim);
+  }
+  .hero-figure{align-self:end;}
+  .grid-blueprint{width:100%; height:auto; display:block;}
+  .hero-bottom{margin-top:64px; border-top:1px solid var(--line); padding:22px 0;}
+  .hero-bottom .wrap{display:flex; justify-content:space-between; align-items:center; gap:24px;}
+  .hero-stats{display:flex; gap:48px;}
+  .hero-stats div{font-size:13.5px; color:var(--ink-dim);}
+  .hero-stats strong{display:block; font-family:'Fraunces', serif; font-size:25px; color:var(--paper); font-weight:600;}
+
+  /* HERO ENTRANCE */
+  .hero-eyebrow, .hero h1, .hero p.lede, .hero-cta-row, .hero-figure, .hero-stats{opacity:0; transform:translateY(14px);}
+  body.loaded .hero-eyebrow{animation:rise .7s cubic-bezier(.2,.7,.3,1) .05s forwards;}
+  body.loaded .hero h1{animation:rise .7s cubic-bezier(.2,.7,.3,1) .15s forwards;}
+  body.loaded .hero p.lede{animation:rise .7s cubic-bezier(.2,.7,.3,1) .28s forwards;}
+  body.loaded .hero-cta-row{animation:rise .7s cubic-bezier(.2,.7,.3,1) .34s forwards;}
+  body.loaded .hero-figure{animation:rise .9s cubic-bezier(.2,.7,.3,1) .2s forwards;}
+  body.loaded .hero-stats{animation:rise .7s cubic-bezier(.2,.7,.3,1) .4s forwards;}
+  @keyframes rise{to{opacity:1; transform:translateY(0);}}
+  .grid-blueprint path{stroke-dasharray:400; stroke-dashoffset:400;}
+  body.loaded .grid-blueprint path{animation:draw 1.3s cubic-bezier(.3,.6,.3,1) .5s forwards;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  @media (prefers-reduced-motion: reduce){
+    .hero-eyebrow, .hero h1, .hero p.lede, .hero-cta-row, .hero-figure, .hero-stats{opacity:1; transform:none; animation:none;}
+    .grid-blueprint path{stroke-dashoffset:0; animation:none;}
+  }
+
+  /* INTRO */
+  section.intro{padding:88px 0 64px; background:var(--void);}
+  section.intro .wrap{display:grid; grid-template-columns: 0.4fr 0.6fr; gap:56px;}
+  section.intro h2{font-size:30px; max-width:10ch; color:var(--paper);}
+  section.intro .body{font-size:18px; max-width:56ch; color:var(--ink-dim);}
+  section.intro .body p + p{margin-top:16px;}
+
+  /* TECH STACK */
+  section.stack{padding:56px 0 88px; background:var(--void);}
+  section.stack .stack-head{
+    display:flex; justify-content:space-between; align-items:baseline; margin-bottom:28px; flex-wrap:wrap; gap:12px;
+  }
+  section.stack h3{font-size:20px; color:var(--paper); font-weight:600; font-family:'IBM Plex Sans', sans-serif;}
+  section.stack .stack-note{font-size:13.5px; color:var(--ink-dim);}
+  .stack-row{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .stack-item{
+    background:var(--panel);
+    padding:28px 26px;
+  }
+  .stack-item .mono{font-size:12px; color:var(--gold); display:block; margin-bottom:10px;}
+  .stack-item h4{font-size:17px; font-weight:600; margin-bottom:8px; color:var(--paper);}
+  .stack-item p{font-size:14px; color:var(--ink-dim);}
+
+  /* DIVISIONS */
+  .divisions{padding:0 0 40px; background:var(--void);}
+  .division{padding:72px 0; border-top:1px solid var(--line);}
+  .division .wrap{display:grid; grid-template-columns: 0.42fr 0.58fr; gap:56px;}
+  .division-head .tag{
+    display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:12px; font-weight:500;
+    padding:5px 12px; border-radius:2px; margin-bottom:20px; letter-spacing:0.03em;
+  }
+  .division.ti .tag{background:rgba(255,200,87,0.12); color:var(--gold);}
+  .division.arq .tag{background:rgba(255,111,89,0.12); color:var(--coral);}
+  .division-head h3{font-size:30px; max-width:11ch; color:var(--paper);}
+  .division.ti .division-head h3{font-family:'Space Grotesk', sans-serif; font-weight:700; letter-spacing:-0.01em;}
+  .division-head p{margin-top:16px; font-size:16px; color:var(--ink-dim); max-width:38ch;}
+
+  .service-list{list-style:none;}
+  .service-list li{display:grid; grid-template-columns: 1fr auto; gap:16px; padding:18px 0; border-bottom:1px solid var(--line);}
+  .service-list li:first-child{padding-top:0;}
+  .service-list .name{font-weight:600; font-size:16.5px; color:var(--paper);}
+  .service-list .desc{font-size:14.5px; color:var(--ink-dim); margin-top:4px;}
+  .division.ti .service-list .name{color:var(--gold);}
+  .division.arq .service-list .name{color:var(--coral);}
+
+  .credential{
+    margin-top:36px; padding:22px 24px; background:var(--panel);
+    border-left:3px solid var(--coral); font-size:14.5px; color:var(--ink-dim);
+  }
+  .credential strong{display:block; font-family:'Fraunces', serif; font-size:17px; margin-bottom:4px; color:var(--coral);}
+
+  .package{
+    margin-top:36px; padding:28px 26px; background:var(--panel);
+    border-left:3px solid var(--gold);
+  }
+  .package .pkg-tag{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--gold); letter-spacing:0.03em; display:block; margin-bottom:6px;
+  }
+  .package h4{font-family:'Fraunces', serif; font-size:19px; color:var(--paper); margin-bottom:6px;}
+  .package > p.pkg-lede{font-size:14px; color:var(--ink-dim); margin-bottom:20px; max-width:44ch;}
+  .pkg-groups{display:grid; grid-template-columns:1fr 1fr; gap:20px 32px;}
+  .pkg-group .g-label{font-size:12.5px; font-weight:600; color:var(--paper); margin-bottom:8px;}
+  .pkg-group ul{list-style:none; font-size:13.5px; color:var(--ink-dim);}
+  .pkg-group li{padding:4px 0; padding-left:14px; position:relative;}
+  .pkg-group li::before{content:"–"; position:absolute; left:0; color:var(--gold);}
+
+  /* CROSSOVER */
+  section.crossover{padding:88px 0; border-top:1px solid var(--line); background:var(--void);}
+  section.crossover .head{display:grid; grid-template-columns: 0.4fr 0.6fr; gap:56px; margin-bottom:48px;}
+  section.crossover h2{font-size:30px; max-width:12ch; color:var(--paper);}
+  section.crossover .head p{font-size:17px; color:var(--ink-dim); max-width:44ch; align-self:end;}
+  .case-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .case{background:var(--panel); padding:32px 28px;}
+  .case .mark{display:flex; gap:6px; margin-bottom:20px;}
+  .case .mark span{width:9px; height:9px; border-radius:50%;}
+  .case .mark .m-ti{background:var(--gold); box-shadow:0 0 8px var(--gold);}
+  .case .mark .m-arq{background:var(--coral); box-shadow:0 0 8px var(--coral);}
+  .case h4{font-size:18px; margin-bottom:10px; max-width:16ch; color:var(--paper);}
+  .case p{font-size:14.5px; color:var(--ink-dim);}
+
+  /* PROCESS */
+  section.process{background:var(--panel-2); color:var(--ink); padding:80px 0;}
+  section.process h2{font-size:30px; max-width:14ch; margin-bottom:48px; color:var(--paper);}
+  .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-top:1px solid var(--line);}
+  .steps > div{padding:26px 22px 0 0; border-right:1px solid var(--line);}
+  .steps > div:last-child{border-right:none;}
+  .steps .num{font-family:'IBM Plex Mono', monospace; font-size:14px; color:var(--gold); margin-bottom:10px;}
+  .steps h4{font-size:17px; font-weight:600; margin-bottom:8px; color:var(--paper);}
+  .steps p{font-size:14px; color:var(--ink-dim);}
+
+  /* FAQ */
+  section.faq{padding:88px 0; background:var(--void);}
+  section.faq .wrap{display:grid; grid-template-columns:0.4fr 0.6fr; gap:56px;}
+  section.faq h2{font-size:30px; max-width:9ch; color:var(--paper);}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-item:first-child{border-top:1px solid var(--line);}
+  .faq-q{
+    width:100%; text-align:left; background:none; border:none;
+    font-family:'IBM Plex Sans', sans-serif; font-size:17px; font-weight:600; color:var(--paper);
+    padding:22px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px;
+  }
+  .faq-q .plus{font-family:'Fraunces', serif; font-size:22px; color:var(--gold); transition:transform .25s ease; flex:0 0 auto;}
+  .faq-item.open .faq-q .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+  .faq-a p{font-size:15px; color:var(--ink-dim); padding-bottom:22px; max-width:52ch;}
+
+  /* CONTACT */
+  section.contact{padding:88px 0; background:var(--void);}
+  section.contact .wrap{display:grid; grid-template-columns: 0.9fr 1.1fr; gap:56px;}
+  section.contact h2{font-size:32px; max-width:10ch; color:var(--paper);}
+  section.contact .body{margin-top:18px; font-size:17px; color:var(--ink-dim); max-width:40ch;}
+  .contact-card{background:var(--panel); border:1px solid var(--line); padding:40px;}
+  .contact-card .row{display:flex; justify-content:space-between; align-items:baseline; padding:16px 0; border-bottom:1px solid var(--line);}
+  .contact-card .row:last-child{border-bottom:none;}
+  .contact-card .label{font-size:13px; color:var(--ink-dim);}
+  .contact-card .value{font-size:16px; font-weight:500; text-align:right; color:var(--paper);}
+  .contact-card .value.fill{color:var(--gold);}
+
+  footer{border-top:1px solid var(--line); padding:28px 0; background:var(--void);}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; font-size:13.5px; color:var(--ink-dim);}
+
+  /* PRICING */
+  section.pricing{padding:88px 0; border-top:1px solid var(--line); background:var(--void);}
+  section.pricing .head{display:grid; grid-template-columns:0.4fr 0.6fr; gap:56px; margin-bottom:48px;}
+  section.pricing h2{font-size:30px; max-width:12ch; color:var(--paper);}
+  section.pricing .head p{font-size:17px; color:var(--ink-dim); max-width:44ch; align-self:end;}
+  .price-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .price-card{background:var(--panel); padding:32px 28px; display:flex; flex-direction:column;}
+  .price-card.featured{background:var(--panel-2); position:relative;}
+  .price-card.featured::before{
+    content:"MÁS ELEGIDO"; font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:0.05em;
+    color:var(--void); background:var(--gold); padding:4px 10px; border-radius:2px; align-self:flex-start; margin-bottom:14px;
+  }
+  .price-card .tier-name{font-family:'Fraunces', serif; font-size:21px; color:var(--paper); margin-bottom:6px;}
+  .price-card .tier-for{font-size:13px; color:var(--ink-dim); margin-bottom:20px;}
+  .price-card .tier-price{font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:32px; color:var(--gold); margin-bottom:2px;}
+  .price-card .tier-unit{font-size:12.5px; color:var(--ink-dim); margin-bottom:22px;}
+  .price-card ul{list-style:none; font-size:14px; color:var(--ink-dim); flex:1;}
+  .price-card li{padding:7px 0; padding-left:16px; position:relative;}
+  .price-card li::before{content:"+"; position:absolute; left:0; color:var(--gold); font-weight:600;}
+  .pricing-note{font-size:13px; color:var(--ink-dim); margin-top:24px; max-width:60ch;}
+
+  /* NETWORK HARDWARE LICENSING TABLE */
+  .network-pricing{margin-top:56px;}
+  .network-pricing h3{font-family:'IBM Plex Sans', sans-serif; font-size:18px; font-weight:600; color:var(--paper); margin-bottom:6px;}
+  .network-pricing .np-note{font-size:13.5px; color:var(--ink-dim); margin-bottom:24px; max-width:56ch;}
+  .np-table{width:100%; border-collapse:collapse; border:1px solid var(--line);}
+  .np-table th{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; font-weight:500; letter-spacing:0.04em;
+    text-align:left; color:var(--gold); padding:12px 16px; border-bottom:1px solid var(--line); background:var(--panel);
+  }
+  .np-table td{padding:16px; border-bottom:1px solid var(--line); font-size:14px; color:var(--ink-dim); vertical-align:top;}
+  .np-table tr:last-child td{border-bottom:none;}
+  .np-table .np-device{font-weight:600; color:var(--paper); font-size:15px;}
+  .np-table .np-price{font-family:'Space Grotesk', sans-serif; font-weight:700; color:var(--gold); white-space:nowrap;}
+  .np-table .np-unit{font-size:11.5px; color:var(--ink-dim); display:block; font-weight:400;}
+
+  .hero-cta-row{display:flex; gap:16px; margin-top:36px; flex-wrap:wrap;}
+  .btn-primary{
+    background:linear-gradient(135deg,#FFDC85,#FFB52E); color:var(--void); font-weight:600; font-size:15px;
+    padding:14px 26px; border-radius:2px; text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+    box-shadow:0 0 24px rgba(255,200,87,0.35); transition:transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 0 32px rgba(255,200,87,0.5);}
+  .btn-ghost{
+    border:1px solid var(--line); color:var(--paper); font-weight:500; font-size:15px;
+    padding:14px 26px; border-radius:2px; text-decoration:none; transition:border-color 0.2s ease, background 0.2s ease;
+  }
+  .btn-ghost:hover{border-color:var(--gold); background:rgba(255,200,87,0.06);}
+
+  /* FLOATING WHATSAPP */
+  .wa-float{
+    position:fixed; bottom:24px; right:24px; z-index:60;
+    background:#25D366; color:#fff; width:56px; height:56px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 4px 18px rgba(0,0,0,0.4); transition:transform 0.2s ease;
+    text-decoration:none;
+  }
+  .wa-float:hover{transform:scale(1.08);}
+  .wa-float svg{width:28px; height:28px;}
+
+  /* HOVER LIFT for cards */
+  .stack-item, .case, .price-card{transition:transform 0.25s ease, background 0.25s ease;}
+  .stack-item:hover, .case:hover{transform:translateY(-4px); background:var(--panel-2);}
+  .price-card:hover{transform:translateY(-4px);}
+
+  /* SOCIAL PROOF */
+  section.proof{padding:56px 0; background:var(--void); border-top:1px solid var(--line);}
+  .proof-row{display:flex; justify-content:space-between; gap:32px; flex-wrap:wrap;}
+  .proof-stat{flex:1; min-width:140px;}
+  .proof-stat strong{
+    display:block; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:34px; color:var(--gold);
+  }
+  .proof-stat span{font-size:13px; color:var(--ink-dim);}
+
+
+  /* ===== SPACING FIXES ===== */
+  h1,h2,h3{line-height:1.15;}
+  h4{line-height:1.3;}
+  section.intro h2, section.crossover h2, section.pricing h2, section.faq h2,
+  section.contact h2, section.process h2, section.testimonials h2{max-width:20ch;}
+  .division-head h3{max-width:18ch;}
+  .division .package{grid-column:1 / -1; margin-top:16px;}
+  .division .pkg-groups{grid-template-columns:repeat(4, 1fr);}
+  .package h4{max-width:none;}
+  @media (min-width:861px){ .division-head{position:sticky; top:104px; align-self:start;} }
+  @media (max-width:980px){ .division .pkg-groups{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .division .pkg-groups{grid-template-columns:1fr;} }
+  @media (max-width:860px){ .hero-stats{display:grid; grid-template-columns:1fr 1fr; gap:20px 28px;} }
+
+  /* ===== WHOA EFFECTS ===== */
+  #net{position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none;}
+  .hero .wrap, .hero-bottom{position:relative; z-index:1;}
+
+  .scroll-progress{
+    position:fixed; top:0; left:0; width:100%; height:3px; z-index:100;
+    transform-origin:0 50%; transform:scaleX(0);
+    background:linear-gradient(90deg,var(--gold),var(--coral));
+    box-shadow:0 0 14px var(--gold);
+  }
+  .cursor-glow{
+    position:fixed; left:0; top:0; width:520px; height:520px; border-radius:50%;
+    pointer-events:none; z-index:5; opacity:0;
+    background:radial-gradient(circle, rgba(255,200,87,0.13), transparent 62%);
+    mix-blend-mode:screen;
+    transition:opacity .4s ease, transform .14s ease-out;
+  }
+
+  .hero h1 .shine{
+    background:linear-gradient(100deg, var(--paper) 15%, var(--gold) 42%, var(--coral) 58%, var(--paper) 85%);
+    background-size:260% 100%;
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation:shine 7s linear infinite;
+  }
+  @keyframes shine{to{background-position:-260% 0;}}
+
+  .hero-figure .grid-blueprint{transition:transform .25s ease-out;}
+  .goat{transform-box:fill-box; transform-origin:50% 100%; animation:leap 2.8s cubic-bezier(.45,.05,.55,.95) infinite;}
+  @keyframes leap{
+    0%,100%{transform:translate(0,0) rotate(5deg);}
+    50%{transform:translate(0,-30px) rotate(-5deg);}
+  }
+  body.loaded .grid-blueprint path.arc{stroke-dasharray:2 4; stroke-dashoffset:0; animation:dashmove 1.1s linear infinite;}
+  @keyframes dashmove{to{stroke-dashoffset:-12;}}
+
+  /* TICKER */
+  .ticker{overflow:hidden; border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--panel); padding:16px 0;}
+  .ticker-track{display:flex; width:max-content; animation:ticker 42s linear infinite;}
+  .ticker:hover .ticker-track{animation-play-state:paused;}
+  .ticker-track span{
+    font-family:'IBM Plex Mono', monospace; font-size:13px; letter-spacing:0.06em; color:var(--ink-dim);
+    padding:0 26px; white-space:nowrap; display:inline-flex; align-items:center; gap:52px;
+  }
+  .ticker-track span::after{content:"\25C6"; color:var(--gold); font-size:9px; opacity:.8;}
+  .ticker-track span:nth-child(3n)::after{color:var(--coral);}
+  @keyframes ticker{to{transform:translateX(-50%);}}
+
+  /* TILT + SPOTLIGHT */
+  .tilt{transform-style:preserve-3d; will-change:transform;}
+  .tilt:hover{background-image:radial-gradient(420px circle at var(--mx,50%) var(--my,50%), rgba(255,200,87,0.12), transparent 60%);}
+
+  /* FEATURED PLAN PULSE */
+  .price-card.featured{z-index:1; animation:pulseGlow 3.4s ease-in-out infinite;}
+  @keyframes pulseGlow{
+    0%,100%{box-shadow:inset 0 0 0 1px rgba(255,200,87,0.25), 0 0 0 rgba(255,200,87,0);}
+    50%{box-shadow:inset 0 0 0 1px rgba(255,200,87,0.75), 0 0 40px rgba(255,200,87,0.2);}
+  }
+
+  @media (hover:none){ .cursor-glow{display:none;} }
+  @media (prefers-reduced-motion: reduce){
+    .goat, .ticker-track, .price-card.featured, .hero h1 .shine{animation:none;}
+    body.loaded .grid-blueprint path.arc{animation:none;}
+    .cursor-glow, .scroll-progress{display:none;}
+  }
+
+  /* SCROLL REVEAL */
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity 0.7s cubic-bezier(.2,.7,.3,1), transform 0.7s cubic-bezier(.2,.7,.3,1);}
+  .reveal.in-view{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+  }
+
+  /* TESTIMONIALS */
+  section.testimonials{padding:88px 0; background:var(--panel-2); border-top:1px solid var(--line);}
+  section.testimonials h2{font-size:30px; color:var(--paper); margin-bottom:40px; max-width:14ch;}
+  .testi-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .testi-card{background:var(--panel); padding:30px 26px;}
+  .testi-card .stars{color:var(--gold); font-size:14px; letter-spacing:2px; margin-bottom:16px;}
+  .testi-card p{font-size:14.5px; color:var(--ink-dim); line-height:1.65; margin-bottom:18px;}
+  .testi-card .who{font-size:13px; color:var(--paper); font-weight:600;}
+  .testi-card .who span{display:block; font-weight:400; color:var(--ink-dim); font-size:12px; margin-top:2px;}
+
+  @media (max-width: 860px){
+    .navlinks{display:none;}
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero-figure{display:none;}
+    .hero-stats{gap:28px; flex-wrap:wrap;}
+    section.intro .wrap, .division .wrap, section.contact .wrap, section.crossover .head, section.faq .wrap{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr 1fr; row-gap:28px;}
+    .steps > div{border-right:none; border-bottom:1px solid var(--line); padding-bottom:20px;}
+    .case-grid, .stack-row, .price-grid{grid-template-columns:1fr;}
+    .pkg-groups{grid-template-columns:1fr;}
+    section.pricing .head{grid-template-columns:1fr;}
+    .np-table{font-size:13px;}
+    .np-table th, .np-table td{padding:10px 8px;}
+    .proof-row{justify-content:flex-start;}
+    .testi-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="scroll-progress"></div>
+<div class="cursor-glow"></div>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 160 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#FF6F59" d="M10,88 H150 V78 H138 V70 H124 V78 H110 V70 H96 V78 H82 V70 H68 V78 H54 V70 H40 V78 H26 V70 H12 V78 H10 Z"/>
+        <path fill="#2B1B10" d="M54,25 C46,20 37,15 29,15 C36,12 45,10 53,14 C59,17 61,21 59,26 Z"/>
+        <path fill="#A9784F" d="M63,23 L69,15 L67,27 Z"/>
+        <path fill="#A9784F" d="M44,36 C43,32 44,28 47,25 L52,23 C56,23 60,25 63,29 L66,37 L60,46 L48,44 Z"/>
+        <path fill="#EDE6D6" d="M47,42 L42,50 L51,47 Z"/>
+        <path fill="#A9784F" d="M66,37 C74,27 86,23 100,24 C114,25 126,29 134,37 L129,47 C117,43 105,41 93,43 C83,45 75,47 69,47 Z"/>
+        <path fill="none" stroke="#2B1B10" stroke-width="3" stroke-linecap="round" d="M131,29 L139,21"/>
+        <path fill="none" stroke="#2B1B10" stroke-width="4.5" stroke-linecap="round" d="M71,46 L57,68"/>
+        <path fill="none" stroke="#2B1B10" stroke-width="4.5" stroke-linecap="round" d="M78,47 L66,70"/>
+        <path fill="none" stroke="#2B1B10" stroke-width="4.5" stroke-linecap="round" d="M121,41 L137,64"/>
+        <path fill="none" stroke="#2B1B10" stroke-width="4.5" stroke-linecap="round" d="M113,43 L127,68"/>
+      </svg>
+      TheWallCity
+    </div>
+    <div class="navlinks">
+      <ul>
+        <li><a href="#ti">TheWallCity TI</a></li>
+        <li><a href="#arq">TheWallCity Arquitectura</a></li>
+        <li><a href="#membresias">Precios</a></li>
+        <li><a href="#proceso">Cómo trabajamos</a></li>
+        <li><a href="#contacto">Preguntas</a></li>
+      </ul>
+      <a class="cta" href="#contacto">Escríbenos</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <div class="hero-eyebrow"><span class="dot"></span>Tecnología y arquitectura, bajo un mismo techo</div>
+      <h1>Conectamos sistemas. <span class="shine">Construimos espacios.</span></h1>
+      <p class="lede">TheWallCity reúne dos disciplinas que casi siempre trabajan por separado: la infraestructura que mantiene tu negocio en línea y seguro, y el diseño que le da forma a tus proyectos de construcción. Un solo equipo, dos especialidades, coordinadas desde Cartagena.</p>
+      <div class="hero-cta-row">
+        <a class="btn-primary" href="https://wa.me/12017592350" target="_blank" rel="noopener">Escríbenos por WhatsApp →</a>
+        <a class="btn-ghost" href="#membresias">Ver precios</a>
+      </div>
+    </div>
+    <div class="hero-figure">
+      <svg class="grid-blueprint" viewBox="0 0 420 285" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="10" width="400" height="265" stroke="rgba(237,238,242,0.14)" stroke-width="1"/>
+        <line x1="10" y1="97" x2="410" y2="97" stroke="rgba(237,238,242,0.08)" stroke-width="1"/>
+        <line x1="10" y1="185" x2="410" y2="185" stroke="rgba(237,238,242,0.08)" stroke-width="1"/>
+        <line x1="150" y1="10" x2="150" y2="275" stroke="rgba(237,238,242,0.08)" stroke-width="1"/>
+        <line x1="290" y1="10" x2="290" y2="275" stroke="rgba(237,238,242,0.08)" stroke-width="1"/>
+
+        <g transform="translate(30,50) scale(2.2)">
+          <path fill="#FF6F59" d="M10,88 H150 V78 H138 V70 H124 V78 H110 V70 H96 V78 H82 V70 H68 V78 H54 V70 H40 V78 H26 V70 H12 V78 H10 Z"/>
+          <path class="arc" fill="none" stroke="#FFC857" stroke-width="1" stroke-dasharray="2 4" opacity="0.55" d="M30,66 Q80,8 130,66"/>
+          <g class="goat">
+          <path fill="#2B1B10" d="M54,25 C46,20 37,15 29,15 C36,12 45,10 53,14 C59,17 61,21 59,26 Z"/>
+          <path fill="#A9784F" d="M63,23 L69,15 L67,27 Z"/>
+          <path fill="#A9784F" d="M44,36 C43,32 44,28 47,25 L52,23 C56,23 60,25 63,29 L66,37 L60,46 L48,44 Z"/>
+          <path fill="#EDE6D6" d="M47,42 L42,50 L51,47 Z"/>
+          <path fill="#A9784F" d="M66,37 C74,27 86,23 100,24 C114,25 126,29 134,37 L129,47 C117,43 105,41 93,43 C83,45 75,47 69,47 Z"/>
+          <path fill="none" stroke="#2B1B10" stroke-width="3" stroke-linecap="round" d="M131,29 L139,21"/>
+          <path fill="none" stroke="#2B1B10" stroke-width="4.5" stroke-linecap="round" d="M71,46 L57,68"/>
+          <path fill="none" stroke="#2B1B10" stroke-width="4.5" stroke-linecap="round" d="M78,47 L66,70"/>
+          <path fill="none" stroke="#2B1B10" stroke-width="4.5" stroke-linecap="round" d="M121,41 L137,64"/>
+          <path fill="none" stroke="#2B1B10" stroke-width="4.5" stroke-linecap="round" d="M113,43 L127,68"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="hero-bottom">
+    <div class="wrap">
+      <div class="hero-stats">
+        <div><strong>2</strong>divisiones especializadas</div>
+        <div><strong>1</strong>equipo coordinado</div>
+        <div><strong>12</strong>el número detrás del nombre</div>
+        <div><strong>2027</strong>fundada en Cartagena</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>CISCO MERAKI</span><span>AWS</span><span>TELEFONÍA VOIP</span><span>CÁMARAS CCTV</span><span>CERRADURAS INTELIGENTES</span><span>CIBERSEGURIDAD GESTIONADA</span><span>WI-FI PARA HOSPEDAJE</span><span>LICENCIAS DE CONSTRUCCIÓN</span><span>DISEÑO ARQUITECTÓNICO</span><span>SOPORTE BILINGÜE</span><span>DIRECCIÓN DE OBRA</span><span>COPIAS DE RESPALDO</span><span>CISCO MERAKI</span><span>AWS</span><span>TELEFONÍA VOIP</span><span>CÁMARAS CCTV</span><span>CERRADURAS INTELIGENTES</span><span>CIBERSEGURIDAD GESTIONADA</span><span>WI-FI PARA HOSPEDAJE</span><span>LICENCIAS DE CONSTRUCCIÓN</span><span>DISEÑO ARQUITECTÓNICO</span><span>SOPORTE BILINGÜE</span><span>DIRECCIÓN DE OBRA</span><span>COPIAS DE RESPALDO</span></div></div>
+
+<section class="proof">
+  <div class="wrap">
+    <div class="proof-row">
+      <div class="proof-stat"><strong>2</strong><span>divisiones bajo un mismo equipo</span></div>
+      <div class="proof-stat"><strong>&lt;24h</strong><span>tiempo de respuesta habitual</span></div>
+      <div class="proof-stat"><strong>100%</strong><span>soporte bilingüe (ES/EN)</span></div>
+      <div class="proof-stat"><strong>1</strong><span>diagnóstico inicial, sin costo</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="intro reveal">
+  <div class="wrap">
+    <h2>Quiénes somos</h2>
+    <div class="body">
+      <p>TheWallCity nace de dos trayectorias que se complementan: un lado de la empresa gestiona infraestructura, redes y ciberseguridad para negocios que no pueden darse el lujo de tener un equipo de TI interno. El otro lado, dirigido por un arquitecto matriculado en Colombia, diseña y acompaña proyectos de construcción desde el primer boceto hasta el permiso de obra.</p>
+      <p>Trabajamos con propietarios de negocios, administradores de propiedades y desarrolladores que necesitan que la parte técnica —ya sea digital o física— esté bien hecha y no requiera supervisión constante.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stack grid-bg reveal">
+  <div class="wrap">
+    <div class="stack-head">
+      <h3>Tecnología con la que trabajamos</h3>
+      <div class="stack-note">Herramientas de nivel empresarial, dimensionadas para negocios pequeños y medianos</div>
+    </div>
+    <div class="stack-row">
+      <div class="stack-item">
+        <span class="mono">INFRAESTRUCTURA DE RED</span>
+        <h4>Cisco</h4>
+        <p>Switches, puntos de acceso y enrutamiento para redes de oficinas, hoteles y locales comerciales.</p>
+      </div>
+      <div class="stack-item">
+        <span class="mono">REDES ADMINISTRADAS EN LA NUBE</span>
+        <h4>Cisco Meraki</h4>
+        <p>Puntos de acceso, switches y cámaras administrados desde un solo panel — ideal para hoteles y locales con varias sedes.</p>
+      </div>
+      <div class="stack-item">
+        <span class="mono">NUBE E INFRAESTRUCTURA</span>
+        <h4>Amazon Web Services</h4>
+        <p>Alojamiento, respaldo y recuperación ante desastres en la nube, dimensionado según el tamaño real del negocio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divisions">
+
+  <div class="division ti reveal" id="ti">
+    <div class="wrap">
+      <div class="division-head">
+        <span class="tag mono">THEWALLCITY / TI</span>
+        <h3>Infraestructura y seguridad para tu negocio</h3>
+        <p>Gestionamos tu red, tus equipos y tu seguridad de forma remota, con tarifas mensuales fijas por dispositivo o por usuario — sin sorpresas en la factura.</p>
+      </div>
+      <ul class="service-list">
+        <li><div><div class="name">Monitoreo y gestión remota</div><div class="desc">Supervisión continua de servidores, computadores y equipos de red, con soporte proactivo antes de que algo falle.</div></div></li>
+        <li><div><div class="name">Ciberseguridad gestionada</div><div class="desc">Firewalls administrados, protección de endpoints, parches de seguridad y copias de respaldo automatizadas.</div></div></li>
+        <li><div><div class="name">Migración y administración en la nube</div><div class="desc">Cargas de trabajo en AWS, Microsoft 365 y Google Workspace, configurados y mantenidos.</div></div></li>
+        <li><div><div class="name">Redes Wi-Fi para hospedaje</div><div class="desc">Infraestructura Cisco Meraki para hoteles y alquileres vacacionales, con Wi-Fi de huéspedes separado de la red administrativa.</div></div></li>
+        <li><div><div class="name">Instalación de servicio de internet</div><div class="desc">Coordinamos la instalación con el proveedor local. El servicio queda registrado a nombre del cliente — nosotros nos encargamos de la configuración y el mantenimiento.</div></div></li>
+        <li><div><div class="name">Telefonía VoIP</div><div class="desc">Sistemas de telefonía en la nube para oficinas y locales, con extensiones ilimitadas y sin necesidad de líneas físicas.</div></div></li>
+        <li><div><div class="name">Mesa de ayuda bilingüe</div><div class="desc">Soporte técnico remoto en español e inglés para equipos que trabajan con clientes internacionales.</div></div></li>
+      </ul>
+      <div class="package">
+        <span class="pkg-tag">PAQUETE</span>
+        <h4>Infraestructura para Airbnb y alquiler vacacional</h4>
+        <p class="pkg-lede">Todo lo que necesita una propiedad de alquiler a corto plazo, administrado desde un mismo panel — ideal para dueños con varias unidades.</p>
+        <div class="pkg-groups">
+          <div class="pkg-group">
+            <div class="g-label">Acceso</div>
+            <ul>
+              <li>Cerraduras inteligentes con código por huésped</li>
+              <li>Códigos que expiran automáticamente al check-out</li>
+              <li>Integración con Airbnb, Vrbo y Hospitable</li>
+            </ul>
+          </div>
+          <div class="pkg-group">
+            <div class="g-label">Monitoreo</div>
+            <ul>
+              <li>Cámaras Meraki en exteriores y entradas</li>
+              <li>Sensores de ruido (sin audio, respeta la privacidad)</li>
+              <li>Sensores de fuga de agua</li>
+            </ul>
+          </div>
+          <div class="pkg-group">
+            <div class="g-label">Clima y consumo</div>
+            <ul>
+              <li>Termostatos inteligentes con modo "huésped fuera"</li>
+              <li>Enchufes inteligentes para cortar circuitos remotamente</li>
+            </ul>
+          </div>
+          <div class="pkg-group">
+            <div class="g-label">Operación multi-propiedad</div>
+            <ul>
+              <li>Panel centralizado para todas tus unidades</li>
+              <li>Alertas automáticas de check-in para el equipo de limpieza</li>
+              <li>Detectores de humo y CO con aviso remoto</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="division arq reveal" id="arq">
+    <div class="wrap">
+      <div class="division-head">
+        <span class="tag mono">THEWALLCITY / ARQUITECTURA</span>
+        <h3>Diseño y dirección de obra con matrícula profesional</h3>
+        <p>Acompañamos cada proyecto desde la idea inicial hasta la entrega, con planos que cumplen la normativa colombiana y coordinación directa en obra.</p>
+        <div class="credential">
+          <strong>Arquitecto matriculado en Colombia</strong>
+          Roberto Carlos Ortega · Tarjeta profesional No. [completar] · Consejo Profesional Nacional de Arquitectura y sus Profesiones Auxiliares (CPNAA)
+        </div>
+      </div>
+      <ul class="service-list">
+        <li><div><div class="name">Diseño arquitectónico</div><div class="desc">Anteproyecto, planos definitivos y renders para vivienda, comercio y remodelaciones.</div></div></li>
+        <li><div><div class="name">Trámites y licencias de construcción</div><div class="desc">Gestión de permisos ante curaduría urbana y cumplimiento normativo local.</div></div></li>
+        <li><div><div class="name">Dirección y supervisión de obra</div><div class="desc">Seguimiento en sitio para que la construcción se ajuste al diseño y al presupuesto.</div></div></li>
+        <li><div><div class="name">Remodelación de propiedades de alquiler</div><div class="desc">Rediseño de espacios pensado en rendimiento como alquiler vacacional o de largo plazo.</div></div></li>
+        <li><div><div class="name">Consultoría de factibilidad</div><div class="desc">Evaluación de terrenos y proyectos antes de comprar o construir.</div></div></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<section class="crossover reveal">
+  <div class="wrap">
+    <div class="head">
+      <h2>Donde se cruzan las dos disciplinas</h2>
+      <p>Algunos proyectos necesitan las dos especialidades a la vez. Aquí es donde TheWallCity rinde más que contratar dos proveedores por separado.</p>
+    </div>
+    <div class="case-grid">
+      <div class="case">
+        <div class="mark"><span class="m-ti"></span><span class="m-arq"></span></div>
+        <h4>Alquiler vacacional inteligente</h4>
+        <p>Remodelación del espacio junto con cerraduras inteligentes, cámaras y Wi-Fi de huéspedes — diseño y red pensados desde el mismo plano.</p>
+      </div>
+      <div class="case">
+        <div class="mark"><span class="m-ti"></span><span class="m-arq"></span></div>
+        <h4>Local comercial nuevo</h4>
+        <p>Planos, licencia de construcción y cableado de red/POS coordinados desde la etapa de diseño, no como una ocurrencia de último momento.</p>
+      </div>
+      <div class="case">
+        <div class="mark"><span class="m-ti"></span><span class="m-arq"></span></div>
+        <h4>Ampliación de hotel boutique</h4>
+        <p>Diseño de habitaciones adicionales junto con segmentación de red por zonas y sistema de cámaras integrado a la obra.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing reveal" id="membresias">
+  <div class="wrap">
+    <div class="head">
+      <h2>Membresías mensuales de TI</h2>
+      <p>Tarifa fija por dispositivo, facturada mensualmente. Sin contratos de permanencia forzosa ni cobros sorpresa por incidente.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="tier-name">Esencial</div>
+        <div class="tier-for">Oficinas pequeñas, hasta 10 equipos</div>
+        <div class="tier-price">Desde $48.000</div>
+        <div class="tier-unit">COP / dispositivo / mes</div>
+        <ul>
+          <li>Monitoreo y gestión remota</li>
+          <li>Parches de seguridad automatizados</li>
+          <li>Copias de respaldo programadas</li>
+          <li>Soporte por correo, horario hábil</li>
+        </ul>
+      </div>
+      <div class="price-card featured">
+        <div class="tier-name">Profesional</div>
+        <div class="tier-for">Negocios en crecimiento, hasta 30 equipos</div>
+        <div class="tier-price">Desde $112.000</div>
+        <div class="tier-unit">COP / dispositivo / mes</div>
+        <ul>
+          <li>Todo lo del plan Esencial</li>
+          <li>Firewall gestionado</li>
+          <li>Red Cisco Meraki administrada</li>
+          <li>Administración de nube (AWS / M365 / Workspace)</li>
+          <li>Telefonía VoIP incluida</li>
+          <li>Mesa de ayuda bilingüe, respuesta prioritaria</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="tier-name">Empresarial</div>
+        <div class="tier-for">Hoteles, varias sedes o propiedades</div>
+        <div class="tier-price">Cotización</div>
+        <div class="tier-unit">a la medida del negocio</div>
+        <ul>
+          <li>Todo lo del plan Profesional</li>
+          <li>Paquete de infraestructura Airbnb / alquiler vacacional</li>
+          <li>Panel centralizado multi-propiedad</li>
+          <li>SLA con tiempos de respuesta garantizados</li>
+          <li>Ingeniero asignado a la cuenta</li>
+        </ul>
+      </div>
+    </div>
+    <div class="network-pricing">
+      <h3>Licenciamiento de red por dispositivo</h3>
+      <p class="np-note">Para negocios que ya tienen un plan base y solo necesitan sumar o licenciar equipos de red — cada dispositivo se cobra por separado, igual que el modelo de licencias de Cisco Meraki.</p>
+      <table class="np-table">
+        <thead>
+          <tr>
+            <th>Dispositivo</th>
+            <th>Licencia incluida</th>
+            <th>Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="np-device">Switch Meraki (hasta 24 puertos)</span></td>
+            <td>Monitoreo 24/7, actualizaciones automáticas, soporte de fallas</td>
+            <td><span class="np-price">$26.000</span><span class="np-unit">COP / switch / mes</span></td>
+          </tr>
+          <tr>
+            <td><span class="np-device">Switch Meraki (48 puertos)</span></td>
+            <td>Monitoreo 24/7, actualizaciones automáticas, soporte de fallas</td>
+            <td><span class="np-price">$45.000</span><span class="np-unit">COP / switch / mes</span></td>
+          </tr>
+          <tr>
+            <td><span class="np-device">Punto de acceso Wi-Fi Meraki</span></td>
+            <td>Red de huéspedes separada, portal cautivo, analítica de uso</td>
+            <td><span class="np-price">$16.000</span><span class="np-unit">COP / punto de acceso / mes</span></td>
+          </tr>
+          <tr>
+            <td><span class="np-device">Firewall Meraki MX</span></td>
+            <td>Seguridad avanzada, VPN entre sedes, filtrado de contenido</td>
+            <td><span class="np-price">$80.000</span><span class="np-unit">COP / dispositivo / mes</span></td>
+          </tr>
+          <tr>
+            <td><span class="np-device">Cámara Meraki</span></td>
+            <td>Grabación en la nube, 30 días de retención, alertas de movimiento</td>
+            <td><span class="np-price">$32.000</span><span class="np-unit">COP / cámara / mes</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="pricing-note">Precios de referencia en pesos colombianos (COP), calculados a una tasa aproximada de $3.200 COP por USD — la TRM real varía día a día, así que conviene ajustarlos antes de publicarlos. La tarifa final se confirma después de un diagnóstico inicial gratuito, según el número de equipos y la complejidad de la red. El servicio de internet que instalamos siempre queda registrado a nombre del cliente — nosotros solo lo configuramos y lo mantenemos.</p>
+  </div>
+</section>
+
+<section class="process reveal" id="proceso">
+  <div class="wrap">
+    <h2>Cómo trabajamos, sin importar la división</h2>
+    <div class="steps">
+      <div><div class="num">01</div><h4>Diagnóstico</h4><p>Evaluamos tu infraestructura o tu terreno/proyecto, y te decimos honestamente qué necesita atención primero.</p></div>
+      <div><div class="num">02</div><h4>Propuesta</h4><p>Recibes un plan claro con alcance, tiempos y costos — sin letra pequeña.</p></div>
+      <div><div class="num">03</div><h4>Ejecución</h4><p>Implementamos o construimos, con actualizaciones regulares durante todo el proceso.</p></div>
+      <div><div class="num">04</div><h4>Acompañamiento</h4><p>Soporte continuo después de la entrega, ya sea mantenimiento de sistemas o garantía de obra.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials reveal">
+  <div class="wrap">
+    <h2>Lo que dicen quienes ya trabajaron con nosotros</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"[Espacio para una reseña real de un cliente de TheWallCity TI — ej. sobre tiempo de respuesta o tranquilidad con la seguridad de su red]"</p>
+        <div class="who">[Nombre del cliente]<span>[Tipo de negocio, Cartagena]</span></div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"[Espacio para una reseña real sobre el paquete de infraestructura para Airbnb/alquiler vacacional]"</p>
+        <div class="who">[Nombre del cliente]<span>[Propietario de alquiler vacacional]</span></div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"[Espacio para una reseña real sobre un proyecto de arquitectura con Roberto Carlos Ortega]"</p>
+        <div class="who">[Nombre del cliente]<span>[Tipo de proyecto]</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq reveal">
+  <div class="wrap">
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q"><span>¿Puedo contratar solo una división?</span><span class="plus">+</span></button>
+        <div class="faq-a"><p>Sí. TheWallCity TI y TheWallCity Arquitectura funcionan de forma independiente — muchos clientes solo necesitan una de las dos.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>¿Trabajan fuera de Cartagena?</span><span class="plus">+</span></button>
+        <div class="faq-a"><p>Sí. La parte de TI se gestiona de forma remota en todo el país; la parte de arquitectura se coordina en sitio según la ciudad del proyecto.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>¿Qué tecnología usan para seguridad de red?</span><span class="plus">+</span></button>
+        <div class="faq-a"><p>Trabajamos con infraestructura Cisco, redes administradas Cisco Meraki y cargas de trabajo en AWS, dimensionados al tamaño real del negocio.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>¿Manejan varias propiedades de Airbnb a la vez?</span><span class="plus">+</span></button>
+        <div class="faq-a"><p>Sí. El paquete de infraestructura para alquiler vacacional está pensado justamente para eso — cerraduras, cámaras y sensores de todas tus unidades desde un mismo panel.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>¿El arquitecto firma los planos?</span><span class="plus">+</span></button>
+        <div class="faq-a"><p>Sí, todos los planos y trámites se presentan bajo la matrícula profesional vigente en Colombia.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact reveal" id="contacto">
+  <div class="wrap">
+    <div>
+      <h2>Hablemos de tu proyecto</h2>
+      <p class="body">Cuéntanos si necesitas resolver algo de tecnología, algo de construcción, o ambas cosas. Respondemos en menos de 24 horas hábiles.</p>
+    </div>
+    <div class="contact-card">
+      <div class="row"><div class="label">Correo</div><div class="value fill"><a href="mailto:roberto.carlos@thewallcity.com">roberto.carlos@thewallcity.com</a></div></div>
+      <div class="row"><div class="label">WhatsApp</div><div class="value fill"><a href="https://wa.me/12017592350" target="_blank" rel="noopener">+1 (201) 759-2350</a></div></div>
+      <div class="row"><div class="label">Ubicación</div><div class="value">Cartagena, Colombia</div></div>
+      <div class="row"><div class="label">Horario</div><div class="value">Lun – Vie, 8:00 a.m. – 5:00 p.m.</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2027 TheWallCity</div>
+    <div>TheWallCity TI · TheWallCity Arquitectura</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/12017592350" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8 8 0 0 0 4.2 15.9L3 21l5.2-1.4A8 8 0 1 0 17.6 6.3zM12 18.5a6.4 6.4 0 0 1-3.3-.9l-.2-.1-2.5.7.7-2.4-.2-.3A6.5 6.5 0 1 1 12 18.5zm3.6-4.9c-.2-.1-1.2-.6-1.4-.7-.2-.1-.3-.1-.4.1s-.5.7-.6.8-.2.1-.4 0a5.3 5.3 0 0 1-2.6-2.3c-.2-.3.2-.3.5-1 0-.1 0-.2 0-.3l-.5-1.3c-.2-.4-.3-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.4 2.4 0 0 0-.7 1.8 4.2 4.2 0 0 0 .9 2.2 9.6 9.6 0 0 0 3.7 3.3c1.3.6 1.8.6 2.4.5a2 2 0 0 0 1.4-1 1.6 1.6 0 0 0 .1-1c-.1-.1-.2-.1-.4-.2z"/></svg>
+</a>
+
+<script>
+  window.addEventListener('load', () => { document.body.classList.add('loaded'); });
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+  // ===== WHOA EFFECTS =====
+  (() => {
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const touch = matchMedia('(hover: none)').matches;
+
+    // scroll progress bar
+    const bar = document.querySelector('.scroll-progress');
+    const onScroll = () => {
+      const h = document.documentElement.scrollHeight - innerHeight;
+      bar.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, scrollY / h) : 0) + ')';
+    };
+    addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // cursor glow
+    const glow = document.querySelector('.cursor-glow');
+    if (!touch && !reduce) {
+      addEventListener('mousemove', (e) => {
+        glow.style.opacity = 1;
+        glow.style.transform = 'translate(' + (e.clientX - 260) + 'px,' + (e.clientY - 260) + 'px)';
+      }, { passive: true });
+      document.addEventListener('mouseleave', () => { glow.style.opacity = 0; });
+    }
+
+    // 3D tilt + spotlight on cards
+    if (!touch && !reduce) {
+      document.querySelectorAll('.price-card, .case, .stack-item').forEach((card) => {
+        card.classList.add('tilt');
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width;
+          const y = (e.clientY - r.top) / r.height;
+          card.style.setProperty('--mx', (x * 100) + '%');
+          card.style.setProperty('--my', (y * 100) + '%');
+          card.style.transform = 'perspective(700px) rotateX(' + ((0.5 - y) * 8) + 'deg) rotateY(' + ((x - 0.5) * 8) + 'deg) translateY(-4px)';
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // hero: live particle network + parallax
+    const cv = document.getElementById('net');
+    if (!cv) return;
+    const ctx = cv.getContext('2d');
+    const hero = cv.parentElement;
+    const fig = hero.querySelector('.grid-blueprint');
+    let w = 0, h = 0, pts = [], raf = 0, visible = true;
+    const mouse = { x: -999, y: -999 };
+
+    const resize = () => {
+      const dpr = Math.min(devicePixelRatio || 1, 2);
+      w = hero.clientWidth; h = hero.clientHeight;
+      cv.width = w * dpr; cv.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const n = Math.min(80, Math.round((w * h) / 15000));
+      pts = Array.from({ length: n }, () => ({
+        x: Math.random() * w, y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35,
+        r: Math.random() * 1.5 + 0.8, amber: Math.random() < 0.18
+      }));
+    };
+
+    const frame = () => {
+      ctx.clearRect(0, 0, w, h);
+      for (let i = 0; i < pts.length; i++) {
+        const p = pts[i];
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > w) p.vx *= -1;
+        if (p.y < 0 || p.y > h) p.vy *= -1;
+        const dx = mouse.x - p.x, dy = mouse.y - p.y, d = Math.hypot(dx, dy);
+        if (d < 170 && d > 1) { p.x += (dx / d) * 0.55; p.y += (dy / d) * 0.55; }
+      }
+      for (let i = 0; i < pts.length; i++) {
+        const a = pts[i];
+        for (let j = i + 1; j < pts.length; j++) {
+          const b = pts[j];
+          const d = Math.hypot(a.x - b.x, a.y - b.y);
+          if (d < 125) {
+            ctx.strokeStyle = 'rgba(255,200,87,' + (0.22 * (1 - d / 125)) + ')';
+            ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+          }
+        }
+        const dm = Math.hypot(a.x - mouse.x, a.y - mouse.y);
+        if (dm < 190) {
+          ctx.strokeStyle = 'rgba(255,111,89,' + (0.55 * (1 - dm / 190)) + ')';
+          ctx.lineWidth = 1.2;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+        }
+      }
+      for (const p of pts) {
+        const c = p.amber ? '255,111,89' : '255,200,87';
+        ctx.fillStyle = 'rgba(' + c + ',0.16)';
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r * 3.2, 0, 6.2832); ctx.fill();
+        ctx.fillStyle = 'rgba(' + c + ',0.95)';
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.2832); ctx.fill();
+      }
+    };
+    const loop = () => { frame(); raf = requestAnimationFrame(loop); };
+    const start = () => { if (!raf && visible && !document.hidden && !reduce) loop(); };
+    const stop = () => { cancelAnimationFrame(raf); raf = 0; };
+
+    resize();
+    if (reduce) frame(); else start();
+    let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { resize(); if (reduce) frame(); }, 150); });
+    new IntersectionObserver((es) => { visible = es[0].isIntersecting; visible ? start() : stop(); }).observe(hero);
+    document.addEventListener('visibilitychange', () => { document.hidden ? stop() : start(); });
+
+    if (!touch) {
+      hero.addEventListener('mousemove', (e) => {
+        const r = hero.getBoundingClientRect();
+        mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+        if (fig && !reduce) {
+          const nx = mouse.x / r.width - 0.5, ny = mouse.y / r.height - 0.5;
+          fig.style.transform = 'translate3d(' + (nx * -16) + 'px,' + (ny * -10) + 'px,0)';
+        }
+      });
+      hero.addEventListener('mouseleave', () => {
+        mouse.x = mouse.y = -999;
+        if (fig) fig.style.transform = '';
+      });
+    }
+  })();
+  document.querySelectorAll('.faq-item').forEach((item) => {
+    const btn = item.querySelector('.faq-q');
+    const ans = item.querySelector('.faq-a');
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach((other) => {
+        if (other !== item){
+          other.classList.remove('open');
+          other.querySelector('.faq-a').style.maxHeight = null;
+        }
+      });
+      if (isOpen){
+        item.classList.remove('open');
+        ans.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        ans.style.maxHeight = ans.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+</body>
+</html>
