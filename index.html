@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TheWallCity — TI y Arquitectura</title>
+<title>TheWallCity, TI y Arquitectura</title>
 <meta name="description" content="Infraestructura de TI, ciberseguridad y arquitectura con matrícula profesional, en un mismo equipo. Cartagena, Colombia.">
 <meta name="theme-color" content="#1B2331">
-<meta property="og:title" content="TheWallCity — TI y Arquitectura">
+<meta property="og:title" content="TheWallCity, TI y Arquitectura">
 <meta property="og:description" content="Infraestructura de TI, ciberseguridad y arquitectura con matrícula profesional, en un mismo equipo. Cartagena, Colombia.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://jortega83.github.io/Wall-City/og-image.jpg">
 <meta property="og:url" content="https://jortega83.github.io/Wall-City/">
 <meta property="og:locale" content="es_CO">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="TheWallCity — TI y Arquitectura">
+<meta name="twitter:title" content="TheWallCity, TI y Arquitectura">
 <meta name="twitter:description" content="Infraestructura de TI, ciberseguridad y arquitectura con matrícula profesional, en un mismo equipo. Cartagena, Colombia.">
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -219,7 +219,7 @@
   .pkg-group .g-label{font-size:12.5px; font-weight:600; color:var(--paper); margin-bottom:8px;}
   .pkg-group ul{list-style:none; font-size:13.5px; color:var(--ink-dim);}
   .pkg-group li{padding:4px 0; padding-left:14px; position:relative;}
-  .pkg-group li::before{content:"–"; position:absolute; left:0; color:var(--gold);}
+  .pkg-group li::before{content:"•"; position:absolute; left:0; color:var(--gold);}
 
   /* CROSSOVER */
   section.crossover{padding:88px 0; border-top:1px solid var(--line); background:var(--void);}
@@ -523,6 +523,16 @@
   .dust{position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:9000;}
   .btn-primary, .btn-ghost, .hc-link{will-change:transform;}
   @media (prefers-reduced-motion:reduce){ .splash{display:none;} .emb-shine{animation:none; display:none;} }
+
+  .plan-choice{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-bottom:44px;}
+  .plan-choice .tier-price{font-size:26px;}
+  .plan-ex{margin:22px 0; border-top:1px solid var(--line); padding-top:16px;}
+  .plan-ex .pe-title{font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; font-family:'IBM Plex Mono',monospace;}
+  .plan-ex .pe-row{display:flex; justify-content:space-between; gap:16px; padding:8px 0; font-size:14px; color:var(--ink-dim); border-bottom:1px solid var(--line);}
+  .plan-ex .pe-row strong{color:var(--paper); white-space:nowrap; font-weight:600;}
+  .plan-btn{display:inline-block; text-align:center; margin-top:auto;}
+  .sub-h{font-family:'IBM Plex Sans',sans-serif; font-size:18px; font-weight:600; color:var(--paper); margin:0 0 18px;}
+  @media (max-width:900px){ .plan-choice{grid-template-columns:1fr;} .plan-ex .pe-row{flex-direction:column; gap:2px;} }
 </style>
 </head>
 <body>
@@ -614,7 +624,7 @@
     <h2>Quiénes somos</h2>
     <div class="body">
       <p>TheWallCity nace de dos trayectorias que se complementan: un lado de la empresa gestiona infraestructura, redes y ciberseguridad para negocios que no pueden darse el lujo de tener un equipo de TI interno. El otro lado, dirigido por un arquitecto matriculado en Colombia, diseña y acompaña proyectos de construcción desde el primer boceto hasta el permiso de obra.</p>
-      <p>Trabajamos con propietarios de negocios, administradores de propiedades y desarrolladores que necesitan que la parte técnica —ya sea digital o física— esté bien hecha y no requiera supervisión constante.</p>
+      <p>Trabajamos con propietarios de negocios, administradores de propiedades y desarrolladores que necesitan que la parte técnica, ya sea digital o física, esté bien hecha y no requiera supervisión constante.</p>
     </div>
   </div>
 </section>
@@ -634,7 +644,7 @@
       <div class="stack-item">
         <span class="mono">REDES ADMINISTRADAS EN LA NUBE</span>
         <h4>Cisco Meraki</h4>
-        <p>Puntos de acceso, switches y cámaras administrados desde un solo panel — ideal para hoteles y locales con varias sedes.</p>
+        <p>Puntos de acceso, switches y cámaras administrados desde un solo panel, ideal para hoteles y locales con varias sedes.</p>
       </div>
       <div class="stack-item">
         <span class="mono">NUBE E INFRAESTRUCTURA</span>
@@ -652,21 +662,21 @@
       <div class="division-head">
         <span class="tag mono">THEWALLCITY / TI</span>
         <h3>Infraestructura y seguridad para tu negocio</h3>
-        <p>Gestionamos tu red, tus equipos y tu seguridad de forma remota, con tarifas mensuales fijas por dispositivo o por usuario — sin sorpresas en la factura.</p>
+        <p>Gestionamos tu red, tus equipos y tu seguridad de forma remota, con tarifas mensuales fijas por dispositivo o por usuario, sin sorpresas en la factura.</p>
       </div>
       <ul class="service-list">
         <li><div><div class="name">Monitoreo y gestión remota</div><div class="desc">Supervisión continua de servidores, computadores y equipos de red, con soporte proactivo antes de que algo falle.</div></div></li>
         <li><div><div class="name">Ciberseguridad gestionada</div><div class="desc">Firewalls administrados, protección de endpoints, parches de seguridad y copias de respaldo automatizadas.</div></div></li>
         <li><div><div class="name">Migración y administración en la nube</div><div class="desc">Cargas de trabajo en AWS, Microsoft 365 y Google Workspace, configurados y mantenidos.</div></div></li>
         <li><div><div class="name">Redes Wi-Fi para hospedaje</div><div class="desc">Infraestructura Cisco Meraki para hoteles y alquileres vacacionales, con Wi-Fi de huéspedes separado de la red administrativa.</div></div></li>
-        <li><div><div class="name">Instalación de servicio de internet</div><div class="desc">Coordinamos la instalación con el proveedor local. El servicio queda registrado a nombre del cliente — nosotros nos encargamos de la configuración y el mantenimiento.</div></div></li>
+        <li><div><div class="name">Instalación de servicio de internet</div><div class="desc">Coordinamos la instalación con el proveedor local. El servicio queda registrado a nombre del cliente, nosotros nos encargamos de la configuración y el mantenimiento.</div></div></li>
         <li><div><div class="name">Telefonía VoIP</div><div class="desc">Sistemas de telefonía en la nube para oficinas y locales, con extensiones ilimitadas y sin necesidad de líneas físicas.</div></div></li>
         <li><div><div class="name">Mesa de ayuda bilingüe</div><div class="desc">Soporte técnico remoto en español e inglés para equipos que trabajan con clientes internacionales.</div></div></li>
       </ul>
       <div class="package">
         <span class="pkg-tag">PAQUETE</span>
         <h4>Infraestructura para Airbnb y alquiler vacacional</h4>
-        <p class="pkg-lede">Todo lo que necesita una propiedad de alquiler a corto plazo, administrado desde un mismo panel — ideal para dueños con varias unidades.</p>
+        <p class="pkg-lede">Todo lo que necesita una propiedad de alquiler a corto plazo, administrado desde un mismo panel, ideal para dueños con varias unidades.</p>
         <div class="pkg-groups">
           <div class="pkg-group">
             <div class="g-label">Acceso</div>
@@ -815,7 +825,7 @@
       <div class="case">
         <div class="mark"><span class="m-ti"></span><span class="m-arq"></span></div>
         <h4>Alquiler vacacional inteligente</h4>
-        <p>Remodelación del espacio junto con cerraduras inteligentes, cámaras y Wi-Fi de huéspedes — diseño y red pensados desde el mismo plano.</p>
+        <p>Remodelación del espacio junto con cerraduras inteligentes, cámaras y Wi-Fi de huéspedes, diseño y red pensados desde el mismo plano.</p>
       </div>
       <div class="case">
         <div class="mark"><span class="m-ti"></span><span class="m-arq"></span></div>
@@ -850,13 +860,56 @@
   <div class="wrap">
     <div class="head">
       <h2>Membresías mensuales de TI</h2>
-      <p>Tarifa fija por dispositivo, facturada mensualmente. Sin contratos de permanencia forzosa ni cobros sorpresa por incidente.</p>
+      <p>Tarifa fija mensual, sin cobros sorpresa por incidente. Elige si prefieres no invertir en equipos o si quieres comprar los tuyos.</p>
     </div>
+    <div class="plan-choice">
+      <div class="price-card featured plan-a">
+        <div class="tier-name">Plan sin inversión</div>
+        <div class="tier-for">No pagas equipos. Todo incluido en una cuota mensual.</div>
+        <div class="tier-price">Cuota mensual fija</div>
+        <div class="tier-unit">contrato de 36 meses</div>
+        <ul>
+          <li>Equipos Cisco Meraki incluidos, instalación incluida</li>
+          <li>Licencias, monitoreo 24/7 y soporte incluidos</li>
+          <li>Cambio del equipo si falla, sin costo extra</li>
+          <li>Los equipos son de TheWallCity y se devuelven al terminar</li>
+          <li>Cancelación anticipada: se paga el saldo pendiente del equipo</li>
+        </ul>
+        <div class="plan-ex">
+          <div class="pe-title">Ejemplos de cuota mensual</div>
+          <div class="pe-row"><span>Local o consultorio (firewall y 2 puntos Wi-Fi)</span><strong>Desde $430.000</strong></div>
+          <div class="pe-row"><span>Hostal pequeño (firewall, switch y 4 puntos Wi-Fi)</span><strong>Desde $780.000</strong></div>
+          <div class="pe-row"><span>Hotel boutique o varias sedes</span><strong>Cotización</strong></div>
+        </div>
+        <a class="btn-primary plan-btn" href="https://wa.me/12017592350?text=Hola%2C%20me%20interesa%20el%20Plan%20sin%20inversi%C3%B3n." target="_blank" rel="noopener">Cotizar plan sin inversión →</a>
+      </div>
+      <div class="price-card plan-b">
+        <div class="tier-name">Plan propio</div>
+        <div class="tier-for">Tú compras los equipos. Nosotros los administramos.</div>
+        <div class="tier-price">Cuota mensual menor</div>
+        <div class="tier-unit">sin contrato, cancelas cuando quieras</div>
+        <ul>
+          <li>Los equipos son tuyos desde el primer día</li>
+          <li>Pagas solo licencia, monitoreo y soporte por dispositivo</li>
+          <li>Sin permanencia, aviso de 30 días</li>
+          <li>Te ayudamos a comprar los equipos correctos</li>
+          <li>Instalación cotizada aparte</li>
+        </ul>
+        <div class="plan-ex">
+          <div class="pe-title">Precio por dispositivo, ver tabla abajo</div>
+          <div class="pe-row"><span>Punto Wi-Fi Meraki</span><strong>$68.000 / mes</strong></div>
+          <div class="pe-row"><span>Switch 24 puertos</span><strong>$58.000 / mes</strong></div>
+          <div class="pe-row"><span>Firewall Meraki MX</span><strong>$160.000 / mes</strong></div>
+        </div>
+        <a class="btn-ghost plan-btn" href="https://wa.me/12017592350?text=Hola%2C%20me%20interesa%20el%20Plan%20propio." target="_blank" rel="noopener">Cotizar plan propio →</a>
+      </div>
+    </div>
+    <h3 class="sub-h">Membresías de soporte por equipo de cómputo</h3>
     <div class="price-grid">
       <div class="price-card">
         <div class="tier-name">Esencial</div>
         <div class="tier-for">Oficinas pequeñas, hasta 10 equipos</div>
-        <div class="tier-price">Desde $48.000</div>
+        <div class="tier-price">Desde $55.000</div>
         <div class="tier-unit">COP / dispositivo / mes</div>
         <ul>
           <li>Monitoreo y gestión remota</li>
@@ -868,7 +921,7 @@
       <div class="price-card featured">
         <div class="tier-name">Profesional</div>
         <div class="tier-for">Negocios en crecimiento, hasta 30 equipos</div>
-        <div class="tier-price">Desde $112.000</div>
+        <div class="tier-price">Desde $130.000</div>
         <div class="tier-unit">COP / dispositivo / mes</div>
         <ul>
           <li>Todo lo del plan Esencial</li>
@@ -894,8 +947,8 @@
       </div>
     </div>
     <div class="network-pricing">
-      <h3>Licenciamiento de red por dispositivo</h3>
-      <p class="np-note">Para negocios que ya tienen un plan base y solo necesitan sumar o licenciar equipos de red — cada dispositivo se cobra por separado, igual que el modelo de licencias de Cisco Meraki.</p>
+      <h3>Plan propio: licenciamiento de red por dispositivo</h3>
+      <p class="np-note">Para negocios que compran sus propios equipos, cada dispositivo se cobra por separado, igual que el modelo de licencias de Cisco Meraki. En el Plan sin inversión estos equipos van incluidos en la cuota mensual.</p>
       <table class="np-table">
         <thead>
           <tr>
@@ -908,32 +961,32 @@
           <tr>
             <td><span class="np-device">Switch Meraki (hasta 24 puertos)</span></td>
             <td>Monitoreo 24/7, actualizaciones automáticas, soporte de fallas</td>
-            <td><span class="np-price">$26.000</span><span class="np-unit">COP / switch / mes</span></td>
+            <td><span class="np-price">$58.000</span><span class="np-unit">COP / switch / mes</span></td>
           </tr>
           <tr>
             <td><span class="np-device">Switch Meraki (48 puertos)</span></td>
             <td>Monitoreo 24/7, actualizaciones automáticas, soporte de fallas</td>
-            <td><span class="np-price">$45.000</span><span class="np-unit">COP / switch / mes</span></td>
+            <td><span class="np-price">$90.000</span><span class="np-unit">COP / switch / mes</span></td>
           </tr>
           <tr>
             <td><span class="np-device">Punto de acceso Wi-Fi Meraki</span></td>
             <td>Red de huéspedes separada, portal cautivo, analítica de uso</td>
-            <td><span class="np-price">$16.000</span><span class="np-unit">COP / punto de acceso / mes</span></td>
+            <td><span class="np-price">$68.000</span><span class="np-unit">COP / punto de acceso / mes</span></td>
           </tr>
           <tr>
             <td><span class="np-device">Firewall Meraki MX</span></td>
             <td>Seguridad avanzada, VPN entre sedes, filtrado de contenido</td>
-            <td><span class="np-price">$80.000</span><span class="np-unit">COP / dispositivo / mes</span></td>
+            <td><span class="np-price">$160.000</span><span class="np-unit">COP / dispositivo / mes</span></td>
           </tr>
           <tr>
             <td><span class="np-device">Cámara Meraki</span></td>
             <td>Grabación en la nube, 30 días de retención, alertas de movimiento</td>
-            <td><span class="np-price">$32.000</span><span class="np-unit">COP / cámara / mes</span></td>
+            <td><span class="np-price">$85.000</span><span class="np-unit">COP / cámara / mes</span></td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p class="pricing-note">Precios de referencia en pesos colombianos (COP), calculados a una tasa aproximada de $3.200 COP por USD — la TRM real varía día a día, así que conviene ajustarlos antes de publicarlos. La tarifa final se confirma después de un diagnóstico inicial gratuito, según el número de equipos y la complejidad de la red. El servicio de internet que instalamos siempre queda registrado a nombre del cliente — nosotros solo lo configuramos y lo mantenemos.</p>
+    <p class="pricing-note">Precios en pesos colombianos (COP) antes de IVA. Los precios por dispositivo incluyen la licencia Meraki; en el Plan propio los equipos se compran aparte, y en el Plan sin inversión van incluidos. La tarifa final se confirma después de un diagnóstico inicial gratuito, según el número de equipos y la complejidad de la red. El servicio de internet que instalamos siempre queda registrado a nombre del cliente, nosotros solo lo configuramos y lo mantenemos.</p>
   </div>
 </section>
 
@@ -942,7 +995,7 @@
     <h2>Cómo trabajamos, sin importar la división</h2>
     <div class="steps">
       <div><div class="num">01</div><h4>Diagnóstico</h4><p>Evaluamos tu infraestructura o tu terreno/proyecto, y te decimos honestamente qué necesita atención primero.</p></div>
-      <div><div class="num">02</div><h4>Propuesta</h4><p>Recibes un plan claro con alcance, tiempos y costos — sin letra pequeña.</p></div>
+      <div><div class="num">02</div><h4>Propuesta</h4><p>Recibes un plan claro con alcance, tiempos y costos, sin letra pequeña.</p></div>
       <div><div class="num">03</div><h4>Ejecución</h4><p>Implementamos o construimos, con actualizaciones regulares durante todo el proceso.</p></div>
       <div><div class="num">04</div><h4>Acompañamiento</h4><p>Soporte continuo después de la entrega, ya sea mantenimiento de sistemas o garantía de obra.</p></div>
     </div>
@@ -955,7 +1008,7 @@
     <div class="testi-grid">
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p>"[Espacio para una reseña real de un cliente de TheWallCity TI — ej. sobre tiempo de respuesta o tranquilidad con la seguridad de su red]"</p>
+        <p>"[Espacio para una reseña real de un cliente de TheWallCity TI, ej. sobre tiempo de respuesta o tranquilidad con la seguridad de su red]"</p>
         <div class="who">[Nombre del cliente]<span>[Tipo de negocio, Cartagena]</span></div>
       </div>
       <div class="testi-card">
@@ -978,7 +1031,7 @@
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q"><span>¿Puedo contratar solo una división?</span><span class="plus">+</span></button>
-        <div class="faq-a"><p>Sí. TheWallCity TI y TheWallCity Arquitectura funcionan de forma independiente — muchos clientes solo necesitan una de las dos.</p></div>
+        <div class="faq-a"><p>Sí. TheWallCity TI y TheWallCity Arquitectura funcionan de forma independiente, muchos clientes solo necesitan una de las dos.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q"><span>¿Trabajan fuera de Cartagena?</span><span class="plus">+</span></button>
@@ -990,7 +1043,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q"><span>¿Manejan varias propiedades de Airbnb a la vez?</span><span class="plus">+</span></button>
-        <div class="faq-a"><p>Sí. El paquete de infraestructura para alquiler vacacional está pensado justamente para eso — cerraduras, cámaras y sensores de todas tus unidades desde un mismo panel.</p></div>
+        <div class="faq-a"><p>Sí. El paquete de infraestructura para alquiler vacacional está pensado justamente para eso, cerraduras, cámaras y sensores de todas tus unidades desde un mismo panel.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q"><span>¿El arquitecto firma los planos?</span><span class="plus">+</span></button>
@@ -1023,7 +1076,7 @@
       <div class="row"><div class="label">Llamar</div><div class="value fill"><a href="tel:+12017592350">+1 (201) 759-2350</a></div></div>
       <div class="row"><div class="label">WhatsApp</div><div class="value fill"><a href="https://wa.me/12017592350" target="_blank" rel="noopener">+1 (201) 759-2350</a></div></div>
       <div class="row"><div class="label">Ubicación</div><div class="value">Cartagena, Colombia</div></div>
-      <div class="row"><div class="label">Horario</div><div class="value">Lun – Vie, 8:00 a.m. – 5:00 p.m.</div></div>
+      <div class="row"><div class="label">Horario</div><div class="value">Lun a Vie, 8:00 a.m. a 5:00 p.m.</div></div>
     </div>
   </div>
 </section>
