@@ -497,6 +497,10 @@
   .quote-form button{cursor:pointer; border:none; font-family:inherit;}
   .quote-form .fine{font-size:12.5px; color:var(--ink-dim);}
   @media (max-width:900px){ .host-grid, .case-grid.six{grid-template-columns:1fr;} section.freecheck h3{font-size:21px;} .quote-form .two{grid-template-columns:1fr;} }
+  section.hosts.more{background:var(--void);}
+  .host-grid.two{grid-template-columns:repeat(2,1fr);}
+  .host-card.arq .hc-tag{color:var(--coral);} .host-card.arq:hover{border-color:var(--coral);} .host-card.arq li::before{color:var(--coral);}
+  @media (max-width:900px){ .host-grid.two{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
@@ -736,6 +740,49 @@
   </div>
 </section>
 
+<section class="hosts more reveal" id="mas-servicios">
+  <div class="wrap">
+    <div class="head">
+      <h2>Más servicios para tu negocio y tu obra</h2>
+      <p>Tecnología y arquitectura que se pagan solas: menos riesgo, menos visitas y propiedades que valen más.</p>
+    </div>
+    <div class="host-grid two">
+      <div class="host-card">
+        <div class="hc-tag">TI · HOTELES Y HOSTALES</div>
+        <h4>Wi-Fi con página de bienvenida</h4>
+        <p>Red para huéspedes con la marca de tu hotel, separada de la red del personal y con tarifa mensual.</p>
+        <ul><li>Acceso con página personalizada</li><li>Red de huéspedes separada y segura</li><li>Monitoreo y soporte mensual</li></ul>
+        <div class="hc-price"><strong>Desde $900.000</strong><span>COP / mes por establecimiento · instalación aparte</span></div>
+        <a class="hc-link" href="https://wa.me/12017592350?text=Hola%2C%20me%20interesa%20el%20Wi-Fi%20para%20mi%20hotel%20u%20hostal." target="_blank" rel="noopener">Cotizar →</a>
+      </div>
+      <div class="host-card">
+        <div class="hc-tag">TI · NEGOCIOS</div>
+        <h4>Copias de seguridad y recuperación</h4>
+        <p>Respaldo automático diario en la nube. Si falla un equipo o hay un ataque, recuperas tu información.</p>
+        <ul><li>Respaldo diario automático</li><li>Pruebas de recuperación periódicas</li><li>Ideal para clínicas, oficinas y contadores</li></ul>
+        <div class="hc-price"><strong>Desde $180.000</strong><span>COP / mes por negocio</span></div>
+        <a class="hc-link" href="https://wa.me/12017592350?text=Hola%2C%20me%20interesan%20las%20copias%20de%20seguridad%20para%20mi%20negocio." target="_blank" rel="noopener">Cotizar →</a>
+      </div>
+      <div class="host-card arq">
+        <div class="hc-tag">ARQUITECTURA · LEGALIZACIÓN</div>
+        <h4>Legalización y licencias de propiedad</h4>
+        <p>Planos y trámites para regularizar ampliaciones y construcciones sin licencia, firmados por arquitecto matriculado.</p>
+        <ul><li>Levantamiento y planos</li><li>Trámite ante la curaduría</li><li>Seguimiento hasta la licencia</li></ul>
+        <div class="hc-price"><strong>Cotización fija</strong><span>según tamaño y estado de la propiedad</span></div>
+        <a class="hc-link" href="https://wa.me/12017592350?text=Hola%2C%20quiero%20cotizar%20la%20legalizaci%C3%B3n%20de%20una%20propiedad." target="_blank" rel="noopener">Cotizar →</a>
+      </div>
+      <div class="host-card arq">
+        <div class="hc-tag">ARQUITECTURA · DESDE EL EXTERIOR</div>
+        <h4>Supervisión de obra a distancia</h4>
+        <p>Visitas semanales a tu obra en Cartagena con reporte de fotos y video, para dueños que viven fuera de Colombia.</p>
+        <ul><li>Visita semanal en sitio</li><li>Reporte con fotos y video</li><li>Control de avance y gastos</li></ul>
+        <div class="hc-price"><strong>Desde $1.200.000</strong><span>COP / mes durante la obra</span></div>
+        <a class="hc-link" href="https://wa.me/12017592350?text=Hola%2C%20me%20interesa%20la%20supervisi%C3%B3n%20de%20obra%20a%20distancia." target="_blank" rel="noopener">Cotizar →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="crossover reveal">
   <div class="wrap">
     <div class="head">
@@ -938,7 +985,7 @@
       <p class="body">Cuéntanos si necesitas resolver algo de tecnología, algo de construcción, o ambas cosas. Respondemos en menos de 24 horas hábiles.</p>
 <form class="quote-form" id="quoteForm">
         <div><label for="qs">¿Qué necesitas?</label>
-          <select id="qs"><option>Revisión gratuita de Wi-Fi y seguridad</option><option>Cerraduras inteligentes</option><option>Cámaras con monitoreo</option><option>Plan mensual de cuidado de propiedad</option><option>Remodelación + tecnología</option><option>Revisión antes de comprar una propiedad</option><option>Soporte de TI para mi negocio</option></select></div>
+          <select id="qs"><option>Revisión gratuita de Wi-Fi y seguridad</option><option>Cerraduras inteligentes</option><option>Cámaras con monitoreo</option><option>Plan mensual de cuidado de propiedad</option><option>Remodelación + tecnología</option><option>Revisión antes de comprar una propiedad</option><option>Soporte de TI para mi negocio</option><option>Wi-Fi para hotel u hostal</option><option>Copias de seguridad</option><option>Legalización de propiedad</option><option>Supervisión de obra a distancia</option></select></div>
         <div class="two"><div><label for="qn">Tu nombre</label><input id="qn" autocomplete="name" required></div>
         <div><label for="qc">Ciudad o barrio</label><input id="qc" placeholder="Cartagena"></div></div>
         <button class="btn-primary" type="submit">Cotizar por WhatsApp →</button>
